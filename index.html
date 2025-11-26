@@ -676,14 +676,14 @@
   <div class="section">
     <h2>So Why Nga???</h2>
     <p>
-      Okay Julya, so let me explain why we ended up using Roboflow for our thesis data creation kasi I think it’s super important na ma-gets mo talaga yung reason. Basically, for YOLOv8n object detection at YOLOv8n-seg for instance segmentation, data is literally everything. Kung hindi maayos yung dataset natin, kahit gaano kagaling yung model, hindi pa rin magiging accurate yung results. So, we needed something na makakatulong sa labeling, data augmentation, at pag-export ng dataset sa tamang format nang mabilis at organized.
-
+      Soooo Julya, so let me explain why we ended up using Roboflow for our thesis data creation :D*. Basically, for YOLOv8n object detection at YOLOv8n-seg for instance segmentation, data is literally everything. Kung hindi maayos yung dataset natin, kahit gaano kagaling yung model, hindi pa rin magiging accurate yung results. So, we needed something na makakatulong sa labeling, data augmentation, at pag-export ng dataset sa tamang format nang mabilis at organized.
+      <br><br><br>
       Roboflow ang napili natin kasi sobrang user-friendly siya at super helpful sa ganitong projects. Imagine mo yung proseso: kailangan nating i-label bawat object sa image, tapos sa segmentation, kailangan mo talagang i-outline yung exact shape ng object, hindi lang basta bounding box. Kung manual, grabe, ang tagal at prone sa errors. Roboflow basically simplifies all of that. Lahat ng annotation, mask creation, at bounding boxes, puwede mo gawin sa isang interface, tapos consistent pa yung format niya para diretso na sa YOLOv8n training.
-
+      <br><br><br>
       Another big thing is yung data augmentation. Para sa YOLO models, kailangan natin diverse dataset para matutunan ng model yung different scenarios. Roboflow allows us to do rotation, flipping, brightness adjustments, cropping, at iba pang augmentations automatically. Meaning, kahit limited yung original dataset natin, we can make it larger at more varied, which improves performance ng model kasi hindi siya overfitted sa iilang klase lang ng images.
-
+      <br><br><br>
       Tapos yung export functionality niya, sobrang convenient. Direktang makukuha natin yung dataset sa format na kailangan ng YOLOv8n at YOLOv8n-seg, so hindi na tayo magko-convert manually or mag-a-adjust ng labels, which saves a lot of time and effort. For segmentation, especially, importante talaga na accurate yung masks kasi yan yung nagtuturo sa model kung ano exactly ang boundaries ng object, at Roboflow ensures na consistent at standardized lahat, kaya mas reliable yung training natin.
-
+      <br><br><br>
       Honestly, kung wala Roboflow, baka ang tagal ng data creation, sobrang prone sa errors, tapos sobrang hassle para sa training ng model. Pero with Roboflow, mas organized at manageable yung buong workflow, and it really just made the whole data creation process way easier. It also allows us to focus more sa model tuning at evaluation instead of sobrang busy sa manual labeling. So yun, parang super justified talaga yung choice natin na gamitin siya kasi practical, efficient, at reliable.
     </p>
   </div>
