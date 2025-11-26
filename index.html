@@ -166,7 +166,6 @@
       background: linear-gradient(to right, transparent, var(--primary), transparent);
     }
     
-    /* Enhanced Workflow Animation Styles */
     .workflow-visual {
       margin-top: 20px;
       position: relative;
@@ -328,7 +327,6 @@
       padding: 10px;
     }
     
-    /* Enhanced Full Screen Image Viewer */
     .image-viewer {
       position: fixed;
       top: 0;
@@ -433,7 +431,6 @@
       right: 30px;
     }
     
-    /* New Feature: Floating Action Button */
     .fab {
       position: fixed;
       bottom: 30px;
@@ -466,7 +463,6 @@
       animation: none;
     }
     
-    /* New Feature: Animated Cards */
     .feature-cards {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -510,7 +506,6 @@
       margin-bottom: 10px;
     }
     
-    /* Responsive adjustments */
     @media (max-width: 768px) {
       .flow-item {
         flex-direction: column;
@@ -807,7 +802,6 @@
 
 </div>
 
-<!-- Full Screen Image Viewer -->
 <div class="image-viewer" id="imageViewer">
   <button class="nav-button prev-button" id="prevButton">&#10094;</button>
   <div class="viewer-content">
@@ -819,12 +813,11 @@
 </div>
 
 <script>
-  // Animation for workflow steps
+
   document.addEventListener('DOMContentLoaded', function() {
     const flowItems = document.querySelectorAll('.flow-item');
     const flowLine = document.querySelector('.flow-line');
     
-    // Function to check if element is in viewport
     function isInViewport(element) {
       const rect = element.getBoundingClientRect();
       return (
@@ -835,7 +828,6 @@
       );
     }
     
-    // Function to handle scroll animation
     function handleScrollAnimation() {
       let allVisible = true;
       
@@ -848,20 +840,16 @@
           allVisible = false;
         }
       });
-      
-      // Show the flow line when all items are visible
+
       if (allVisible && flowLine) {
         flowLine.classList.add('visible');
       }
     }
-    
-    // Initial check
+
     handleScrollAnimation();
-    
-    // Check on scroll
+  
     window.addEventListener('scroll', handleScrollAnimation);
-    
-    // Full Screen Image Viewer Functionality
+
     const imageViewer = document.getElementById('imageViewer');
     const viewerImage = document.getElementById('viewerImage');
     const viewerCaption = document.getElementById('viewerCaption');
@@ -871,8 +859,7 @@
     
     const imageContainers = document.querySelectorAll('.image-container');
     let currentImageIndex = 0;
-    
-    // Open image viewer when an image is clicked
+
     imageContainers.forEach((container, index) => {
       container.addEventListener('click', () => {
         const imageSrc = container.getAttribute('data-image');
@@ -886,8 +873,7 @@
         document.body.style.overflow = 'hidden'; // Prevent scrolling
       });
     });
-    
-    // Close image viewer
+
     closeButton.addEventListener('click', () => {
       imageViewer.classList.remove('active');
       document.body.style.overflow = ''; // Re-enable scrolling
@@ -901,15 +887,13 @@
       }
     });
     
-    // Close with Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && imageViewer.classList.contains('active')) {
         imageViewer.classList.remove('active');
         document.body.style.overflow = '';
       }
     });
-    
-    // Navigation between images
+
     prevButton.addEventListener('click', (e) => {
       e.stopPropagation();
       currentImageIndex = (currentImageIndex - 1 + imageContainers.length) % imageContainers.length;
@@ -921,8 +905,7 @@
       currentImageIndex = (currentImageIndex + 1) % imageContainers.length;
       updateViewerImage();
     });
-    
-    // Keyboard navigation
+
     document.addEventListener('keydown', (e) => {
       if (imageViewer.classList.contains('active')) {
         if (e.key === 'ArrowLeft') {
@@ -943,8 +926,7 @@
       viewerImage.src = imageSrc;
       viewerCaption.textContent = caption;
     }
-    
-    // Scroll to top functionality
+
     const scrollTopBtn = document.getElementById('scrollTopBtn');
     
     scrollTopBtn.addEventListener('click', () => {
@@ -954,7 +936,6 @@
       });
     });
     
-    // Show/hide scroll to top button based on scroll position
     window.addEventListener('scroll', () => {
       if (window.pageYOffset > 300) {
         scrollTopBtn.style.display = 'flex';
